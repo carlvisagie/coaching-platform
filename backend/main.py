@@ -3,8 +3,7 @@ from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import os
 
-app = Flask(__name__, static_folder="../frontend/build", static_url_path="")
-CORS(app, origins="*", supports_credentials=True)
+app = Flask(__name__, static_folder="static", static_url_path="")
 
 @app.route("/api/emotion_logs")
 def emotion_logs():
