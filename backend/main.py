@@ -46,11 +46,10 @@ def recommend_coping():
 def index():
     return send_from_directory(app.static_folder, "index.html")
 
-if __name__ != "__main__":
-    gunicorn_app = app  # for Gunicorn
+gunicorn_app = app  # expose for Gunicorn
 
 if __name__ == "__main__":
+    import os
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)), debug=True)
-
 
 
