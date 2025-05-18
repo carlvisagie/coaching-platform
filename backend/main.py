@@ -132,6 +132,9 @@ def add_journal_entry():
         "message": "Journal entry saved",
         "timestamp": entry["timestamp"]
     })
+@app.route("/")
+def home():
+    return "Backend is live. Use /api/* endpoints."
 
 # 🔥 EXPOSE FOR GUNICORN
 gunicorn_app = app
